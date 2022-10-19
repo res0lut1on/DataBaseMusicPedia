@@ -111,11 +111,9 @@
 -	Title (Заголовок)
 -	Text (Текст)
 -	Mark_value (Оценка отзыва)
-10.     Log Review 
-
-- 	Review
+10.     Log Review
+-	Review
 -	DateReview
-
 11.	Log UpdatePublication
 -	Author
 -	Date
