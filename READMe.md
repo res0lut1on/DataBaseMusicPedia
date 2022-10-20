@@ -119,6 +119,7 @@
 -	Date
 -	Publication
 
+![Image alt](https://github.com/res0lut1on/DataBaseMusicPedia/blob/main/Diagram.png)
 
 Сущности
 1.	MusicMan 	
