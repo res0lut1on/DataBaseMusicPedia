@@ -118,3 +118,131 @@
 -	Author
 -	Date
 -	Publication
+
+
+Сущности
+1.	MusicMan 	
+o	MusicianID (int, pk), NOT NULL
+o	NameID (int, foreign_key -> Fml, one to one), NOT NULL
+o	GenreID (int, foreign_key) //
+o	Description (nvarchar(4000))
+o	DateOfBirth (date)
+o	PlaceOfBirth (nvarchar(100))
+o	YearsActive (date) 
+o	InstrumentID (инструменты) //
+o	Labels (звукозаписывающая компания) //
+o	MemberOf (состоит в) // 
+o	RelatedGroups (группы с которыми связан) // 
+o	Albums (альбомы) //
+o	Views (отзывы) //
+o	AvgMark (int) 
+2.	FML 
+o	FmlID (int, pk), NOT NULL
+o	LastName (nvarchar(40)), NOT NULL
+o	Name (nvarchar(20)), NOT NULL
+o	MiddleName (nvarchar(20))
+o	MusicianID (int, foreign_key ->, one to one), NOT NULL
+
+3.	Band
+o	BandID (int), NOT NULL
+o	Name (nvarchar(30)), NOT NULL
+o	Description (nvarchar(4000))
+o	Genres // 
+o	Albums //
+o	Origin ((nvarchar(100)))
+o	YearsActive(date)
+o	Labels //
+o	Members //
+o	Website (nvarchar(100))
+o	Views(int, foreign_key)
+o	Mark (int)
+4.	Genres
+o	GenresID (int, pk), NOT NULL
+o	Name (nvarchar(30)), NOT NULL
+o	Description (nvarchar(4000))
+o	Stylistic origins (стилистическое происхождение)//
+o	Origins (происхождение) //
+o	Derivative forms (производные формы) //
+o	Subgenres (поджанры) //
+5.	Instrument
+o	InstrumentID (int, pk), NOT NULL
+o	Name (nvarchar(20)), NOT NULL
+o	Description (nvarchar(4000))
+o	Classification (классификация) // 
+o	Developed (date) 
+o	Derivative forms (производные формы) // 
+6.	Album 
+o	AlbumID (int, pk), NOT NULL
+o	Name (nvarchar(30)), NOT NULL
+o	Description (nvarchar(4000))
+o	Released (date)
+o	StudioID (int,  foreign_key)
+o	Genres //
+o	List of comps (список песен)//
+o	Length (time)
+o	LabelID (int, foreign_key)
+o	Producer (продюсер) // 
+o	Mark (int)
+o	Reviews // 
+7.	Song 
+o	SongID (int, pk), NOT NULL
+o	Name (nvarchar(30)), NOT NULL
+o	Description (nvarchar(4000))
+o	Length (int)
+o	Genres //
+o	Author //
+o	Mark (int)
+o	Reviews //
+o	AlbumID (int, foreign_key)
+8.	Mark
+o	Value (int), NOT NULL
+o	UserID (int, foreign_key), NOT NULL
+o	PublicationID (int, foreign_key)
+o	BadnID (int, foreign_key)
+o	Musician (int, foreign_key)
+9.	Publication
+o	PublicationID(int, pk), NOT NULL
+o	Title (nvarchar(30)), NOT NULL
+o	Description (nvarchar(4000))
+o	Comments // 
+o	Mark (int)
+10.	Review
+o	ReviewID (int, pk), NOT NULL
+o	Title (nvarchar(30)), NOT NULL
+o	Text (nvarchar(4000))
+o	UserID (int, foreign_key), NOT NULL
+o	PublicationID (int, foreign_key)
+o	BadnID (int, foreign_key)
+o	Musician (int, foreign_key)
+o	Mark_value (int)
+11.	 Labels
+o	LabelsID (int, pk), NOT NULL
+o	Name (nvarchar(30)), NOT NULL
+o	Description (nvarchar(2000))
+12.	 Studio
+o	StudioID (int, pk), NOT NULL
+o	Name (nvarchar(30)), NOT NULL
+o	Description (nvarchar(2000))
+13.	Log Review
+o	ReviewID (int, foreign_key), NOT NULL
+o	UserID (int, foreign_key), NOT NULL
+o	DateReview (datetime), NOT NULL
+14.	 Log UpdatePublication
+o	LogUpdateID (int, pk), NOT NULL
+o	FmlID (int, foreign_key), NOT NULL
+o	Date (datetime), NOT NULL
+o	PublicationID (int, foreign_key), NOT NULL
+15.	UserRole
+o	UserID (int, pk), NOT NULL
+o	UserDataID (int, foreign_key), NOT NULL
+o	Date (datetime), NOT NULL
+o	RoleID (int, foreign_key), NOT NULL
+16.	Role
+o	RoleID (int, pk), NOT NULL
+o	Name (nvarchar(10)), NOT NULL
+17.	UserData
+o	UserDataID (int, pk), NOT NULL
+o	NickName (nvarchar(30), NOT NULL
+o	Date (datetime), NOT NULL
+o	Description (nvarchar(50))
+
