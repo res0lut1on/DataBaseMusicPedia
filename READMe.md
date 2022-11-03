@@ -136,7 +136,7 @@
 -	RelatedGroups (группы с которыми связан) // 
 -	Albums (альбомы) //
 -	Views (отзывы) //
--	AvgMark (int) 
+
 2.	FML 
 -	FmlID (int, pk), NOT NULL
 -	LastName (nvarchar(40)), NOT NULL
@@ -156,22 +156,19 @@
 -	Members //
 -	Website (nvarchar(100))
 -	Views(int, foreign_key)
--	Mark (int)
+
 4.	Genres
 -	GenresID (int, pk), NOT NULL
 -	Name (nvarchar(30)), NOT NULL
 -	Description (nvarchar(4000))
--	Stylistic origins (стилистическое происхождение)//
--	Origins (происхождение) //
--	Derivative forms (производные формы) //
--	Subgenres (поджанры) //
+
 5.	Instrument
 -	InstrumentID (int, pk), NOT NULL
 -	Name (nvarchar(20)), NOT NULL
 -	Description (nvarchar(4000))
 -	Classification (классификация) // 
 -	Developed (date) 
--	Derivative forms (производные формы) // 
+
 6.	Album 
 -	AlbumID (int, pk), NOT NULL
 -	Name (nvarchar(30)), NOT NULL
@@ -183,8 +180,7 @@
 -	Length (time)
 -	LabelID (int, foreign_key)
 -	Producer (продюсер) // 
--	Mark (int)
--	Reviews // 
+
 7.	Song 
 -	SongID (int, pk), NOT NULL
 -	Name (nvarchar(30)), NOT NULL
@@ -192,21 +188,22 @@
 -	Length (int)
 -	Genres //
 -	Author //
--	Mark (int)
--	Reviews //
 -	AlbumID (int, foreign_key)
+
 8.	Mark
 -	Value (int), NOT NULL
 -	UserID (int, foreign_key), NOT NULL
 -	PublicationID (int, foreign_key)
 -	BadnID (int, foreign_key)
 -	Musician (int, foreign_key)
+
 9.	Publication
 -	PublicationID(int, pk), NOT NULL
 -	Title (nvarchar(30)), NOT NULL
 -	Description (nvarchar(4000))
 -	Comments // 
 -	Mark (int)
+
 10.	Review
 -	ReviewID (int, pk), NOT NULL
 -	Title (nvarchar(30)), NOT NULL
@@ -215,32 +212,37 @@
 -	PublicationID (int, foreign_key)
 -	BadnID (int, foreign_key)
 -	Musician (int, foreign_key)
--	Mark_value (int)
+
 11.	 Labels
 -	LabelsID (int, pk), NOT NULL
 -	Name (nvarchar(30)), NOT NULL
 -	Description (nvarchar(2000))
+
 12.	 Studio
 -	StudioID (int, pk), NOT NULL
 -	Name (nvarchar(30)), NOT NULL
 -	Description (nvarchar(2000))
+
 13.	Log Review
 -	ReviewID (int, foreign_key), NOT NULL
 -	UserID (int, foreign_key), NOT NULL
 -	DateReview (datetime), NOT NULL
+
 14.	 Log UpdatePublication
 -	LogUpdateID (int, pk), NOT NULL
 -	FmlID (int, foreign_key), NOT NULL
 -	Date (datetime), NOT NULL
 -	PublicationID (int, foreign_key), NOT NULL
+
 15.	UserRole
 -	UserID (int, pk), NOT NULL
--	UserDataID (int, foreign_key), NOT NULL
 -	Date (datetime), NOT NULL
 -	RoleID (int, foreign_key), NOT NULL
+
 16.	Role
 -	RoleID (int, pk), NOT NULL
 -	Name (nvarchar(10)), NOT NULL
+
 17.	UserData
 -	UserDataID (int, pk), NOT NULL
 -	NickName (nvarchar(30), NOT NULL
