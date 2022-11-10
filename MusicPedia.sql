@@ -435,7 +435,7 @@ GO
 ALTER TABLE [SongGenre] ADD FOREIGN KEY ([SongID]) REFERENCES [Song] ([SongID])
 GO
 
-ALTER TABLE [SongGenre] ADD FOREIGN KEY ([SongID]) REFERENCES [Song] ([SongID])
+ALTER TABLE [SongGenre] ADD FOREIGN KEY ([GenreID]) REFERENCES [Genre] ([GenreID])
 GO
 
 ALTER TABLE [SongMusican] ADD FOREIGN KEY ([SongID]) REFERENCES [Song] ([SongID])
